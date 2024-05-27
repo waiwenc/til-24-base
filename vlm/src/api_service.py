@@ -1,6 +1,6 @@
 import base64
 from fastapi import FastAPI, Request
-
+# from pydantic import BaseModel
 from VLMManager import VLMManager
 
 
@@ -8,11 +8,16 @@ app = FastAPI()
 
 vlm_manager = VLMManager()
 
+# class Instance(BaseModel):
+#     b64: str
+#     caption: str
+
+# class Instances(BaseModel):
+#     instances: list[Instance]
 
 @app.get("/health")
 def health():
     return {"message": "health ok"}
-
 
 @app.post("/identify")
 async def identify(instance: Request):

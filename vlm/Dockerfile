@@ -13,7 +13,6 @@ ENV PYTHONUNBUFFERED 1
 # set this flag to just ignore the warning
 ENV PIP_ROOT_USER_ACTION=ignore
 
-RUN pip install -U pip
 WORKDIR /workspace
 
 # install other requirements
